@@ -45,7 +45,7 @@ namespace Äventyrliga_Kontakter
                 {
                     Service.SaveContact(item);
                     TextLabel.Text = "Kontakten lades till";
-                    Panel.Visible = true;
+                    SuccessPanel.Visible = true;
                 }
                 catch (Exception)
                 {
@@ -61,8 +61,8 @@ namespace Äventyrliga_Kontakter
             try
             {
                 Service.DeleteContact(ContactID);
-                TextLabel.Text = "Kontakten togs bort";
-                Panel.Visible = true;
+                TextLabelDelete.Text = "Kontakten togs bort";
+                DeletePanel.Visible = true;
             }
             catch
             {
@@ -92,7 +92,7 @@ namespace Äventyrliga_Kontakter
                 {
                     Service.SaveContact(contact);
                     TextLabel.Text = "Kontakten Uppdaterades";
-                    Panel.Visible = true;
+                    SuccessPanel.Visible = true;
                 }
                 catch
                 {

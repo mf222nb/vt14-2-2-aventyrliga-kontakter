@@ -1,0 +1,48 @@
+﻿body {
+    width: 800px;
+    margin: 0 auto;
+    border-bottom: 1px solid #000000;
+}
+
+.header {
+    border-bottom: 2px solid #000000;
+}
+
+.error {
+    color: red;
+}
+
+#SuccessPanel {
+    width: 100%;
+    border: 2px solid #86ff68;
+    background-color: #acff98;
+    color: green;
+    margin-bottom: 10px;
+}
+
+#DeletePanel {
+    width: 100%;
+    border: 2px solid #570000;
+    background-color: #570000;
+    color: red;
+    margin-bottom: 10px;
+}
+
+#form1 {
+    margin-top: 20px;
+}
+
+.table {
+    border-collapse: collapse;
+    background-color: #909494;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.td {
+    color: #E9F0EF;
+}
+
+table, th, td {
+    border: 1px solid #DDE3E3;
+}

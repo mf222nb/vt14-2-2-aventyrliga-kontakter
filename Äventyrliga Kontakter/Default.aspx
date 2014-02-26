@@ -5,16 +5,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/style.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Äventyrliga Kontakter</h1>
     </header>
     <form id="form1" runat="server">
     <div>
         
-        <asp:Panel ID="Panel" runat="server" Visible="false">
+        <asp:Panel ID="SuccessPanel" runat="server" Visible="false">
             <asp:Label ID="TextLabel" runat="server" Text=""></asp:Label>
+        </asp:Panel>
+        <asp:Panel ID="DeletePanel" runat="server" Visible="false">
+            <asp:Label ID="TextLabelDelete" runat="server" Text=""></asp:Label>
         </asp:Panel>
 
         <asp:ValidationSummary class="error" runat="server" />
@@ -28,7 +32,7 @@
             DataKeyNames="ContactID"
             InsertItemPosition="FirstItem">
             <LayoutTemplate>
-                <table>
+                <table class="table">
                     <tr>
                         <th>
                             Förnamn
@@ -47,13 +51,13 @@
             </LayoutTemplate>
             <ItemTemplate>
                 <tr>
-                    <td>
+                    <td class="td">
                         <%# Item.FirstName  %>
                     </td>
-                    <td>
+                    <td class="td">
                         <%# Item.LastName %>
                     </td>
-                    <td>
+                    <td class="td">
                         <%# Item.EmailAddress %>
                     </td>
                     <td>
@@ -63,7 +67,7 @@
                 </tr>
             </ItemTemplate>
             <EmptyDataTemplate>
-                <table>
+                <table class="table">
                     <tr>
                         <td>
                             Kunduppgifter saknas
@@ -94,13 +98,13 @@
             </InsertItemTemplate>
             <EditItemTemplate>
                 <tr>
-                    <td>
+                    <td class="td">
                         <asp:TextBox ID="FirstName" runat="server" Text='<%# BindItem.FirstName %>' ValidationGroup="Edit"/>
                     </td>
-                    <td>
+                    <td class="td">
                         <asp:TextBox ID="LastName" runat="server" Text='<%# BindItem.LastName %>' ValidationGroup="Edit"/>
                     </td>
-                    <td>
+                    <td class="td">
                         <asp:TextBox ID="EmailAddress" runat="server" Text='<%# BindItem.EmailAddress %>' TextMode="Email" ValidationGroup="Edit"/>
                     </td>
                     <td>

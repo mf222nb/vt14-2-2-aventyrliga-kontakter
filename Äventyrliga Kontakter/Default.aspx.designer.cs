@@ -22,13 +22,13 @@ namespace Äventyrliga_Kontakter {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Panel control.
+        /// SuccessPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel;
+        protected global::System.Web.UI.WebControls.Panel SuccessPanel;
         
         /// <summary>
         /// TextLabel control.
@@ -38,6 +38,24 @@ namespace Äventyrliga_Kontakter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TextLabel;
+        
+        /// <summary>
+        /// DeletePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel DeletePanel;
+        
+        /// <summary>
+        /// TextLabelDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TextLabelDelete;
         
         /// <summary>
         /// ContactListView control.
