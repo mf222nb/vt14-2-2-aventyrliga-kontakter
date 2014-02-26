@@ -67,10 +67,13 @@
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\jquery-2.1.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ValidationExtension.cs" />
     <Compile Include="Model\DAL\ContactDAL.cs" />
     <Compile Include="Model\DAL\DALBase.cs" />
     <Compile Include="Default.aspx.cs">

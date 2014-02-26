@@ -17,9 +17,6 @@
         <asp:Panel ID="SuccessPanel" runat="server" Visible="false">
             <asp:Label ID="TextLabel" runat="server" Text=""></asp:Label>
         </asp:Panel>
-        <asp:Panel ID="DeletePanel" runat="server" Visible="false">
-            <asp:Label ID="TextLabelDelete" runat="server" Text=""></asp:Label>
-        </asp:Panel>
 
         <asp:ValidationSummary class="error" runat="server" />
         <asp:ValidationSummary class="error" runat="server" ValidationGroup="Edit"/>
@@ -30,7 +27,7 @@
             DeleteMethod="ContactListView_DeleteItem"
             UpdateMethod="ContactListView_UpdateItem"
             DataKeyNames="ContactID"
-            InsertItemPosition="FirstItem">
+            InsertItemPosition="FirstItem" OnPagePropertiesChanged="ContactListView_PagePropertiesChanged">
             <LayoutTemplate>
                 <table class="table">
                     <tr>

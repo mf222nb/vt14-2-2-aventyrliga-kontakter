@@ -10,9 +10,38 @@ namespace Äventyrliga_Kontakter
 {
     public partial class Default : System.Web.UI.Page
     {
+        //Returnerar true eller false beroende på om ett meddelande finns eller inte
+        private bool HasMessage
+        {
+            get
+            {
+                return Session["uploadMessage"] != null;
+            }
+        }
+
+        //Skapar en Session och tar bort den när den är skapad
+        private string UploadMessage
+        {
+            get
+            {
+                var message = Session["uploadMessage"] as string;
+                Session.Remove("uploadMessage");
+                return message;
+
+            }
+            set
+            {
+                Session["uploadMessage"] = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataPager1.SetPageProperties(1, 20, false);
+            if (HasMessage)
+            {
+                TextLabel.Text = UploadMessage;
+                SuccessPanel.Visible = true;
+            }
         }
 
         // The return type can be changed to IEnumerable, however to support
@@ -44,8 +73,8 @@ namespace Äventyrliga_Kontakter
                 try
                 {
                     Service.SaveContact(item);
-                    TextLabel.Text = "Kontakten lades till";
-                    SuccessPanel.Visible = true;
+                    UploadMessage = String.Format("Kontakten lades till");
+                    Response.Redirect("~/Default.aspx");
                 }
                 catch (Exception)
                 {
@@ -61,8 +90,8 @@ namespace Äventyrliga_Kontakter
             try
             {
                 Service.DeleteContact(ContactID);
-                TextLabelDelete.Text = "Kontakten togs bort";
-                DeletePanel.Visible = true;
+                UploadMessage = String.Format("Kontakten togs bort");
+                Response.Redirect("~/Default.aspx");
             }
             catch
             {
@@ -91,14 +120,19 @@ namespace Äventyrliga_Kontakter
                 try
                 {
                     Service.SaveContact(contact);
-                    TextLabel.Text = "Kontakten Uppdaterades";
-                    SuccessPanel.Visible = true;
+                    UploadMessage = String.Format("Kontakten uppdaterades");
+                    Response.Redirect("~/Default.aspx");
                 }
                 catch
                 {
                     ModelState.AddModelError(String.Empty, String.Format("Ett fel inträffade när kontakten med ID {0} skulle uppdateras", ContactID));
                 }
             }
+        }
+
+        protected void ContactListView_PagePropertiesChanged(object sender, EventArgs e)
+        {
+            ContactListView.EditIndex = -1;
         }
     }
 }

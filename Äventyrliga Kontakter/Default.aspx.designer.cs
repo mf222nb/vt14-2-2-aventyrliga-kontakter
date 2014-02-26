@@ -40,24 +40,6 @@ namespace Äventyrliga_Kontakter {
         protected global::System.Web.UI.WebControls.Label TextLabel;
         
         /// <summary>
-        /// DeletePanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel DeletePanel;
-        
-        /// <summary>
-        /// TextLabelDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextLabelDelete;
-        
-        /// <summary>
         /// ContactListView control.
         /// </summary>
         /// <remarks>
